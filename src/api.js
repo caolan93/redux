@@ -1,7 +1,7 @@
 import { API_KEY } from './keys';
 
 // BASE URL
-const base_url = 'http://api.rawg.io/api/';
+const base_url = 'https://api.rawg.io/api/';
 
 // POPULAR GAMES
 
@@ -19,7 +19,7 @@ const getCurrentDay = () => {
 	if (day < 10) {
 		return `0${day}`;
 	} else {
-		return month;
+		return day;
 	}
 };
 
@@ -31,7 +31,7 @@ const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
 const popular_games = `games?key=${API_KEY}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const upcoming_games = `games?key=${API_KEY}&dates=${lastYear},${nextYear}&ordering=-rating&page_size=10`;
 
 export const popularGamesURL = () => `${base_url}${popular_games}`;
-
-console.log(popularGamesURL());
+export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
