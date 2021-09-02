@@ -1,11 +1,7 @@
 import './App.css';
 
 function App() {
-	return (
-		<div className="app">
-			<h1>App</h1>
-		</div>
-	);
+	return <div className="app">Hello Ignite?</div>;
 }
 
 export default App;
